@@ -6,7 +6,7 @@ body{
 .clear-fix:after{ content:''; display: block; clear: both;}
 .fl{ float: left; }
 .fr{ float: right; }
-.color{color: #ff4400 !important;}
+.color{color: #ff4400}
 a{color: #6c6c6c;}
 a:hover{
 	color: #ff4400;
