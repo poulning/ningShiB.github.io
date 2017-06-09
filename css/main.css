@@ -30,6 +30,24 @@ a:hover{
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+@font-face {
+	font-family: 'self-font';
+	src:  url('../fonts/selfFonts/selfIcon.eot');
+	src:  url('../fonts/selfFonts/selfIcon.eot?#iefix') format('embedded-opentype'), 
+	url('../fonts/selfFonts/selfIcon.ttf') format('truetype'),
+	url('../fonts/selfFonts/selfIcon.woff') format('woff'),
+	url('../fonts/selfFonts/selfIcon.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+.self-font{
+	font-family: 'self-font' !important;
+	font-style: normal;
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
 .all{
 	transition: .5s;
 }
@@ -455,15 +473,15 @@ a:hover{
 	background: url(../img/nav-item-bg.gif) no-repeat 166px center;
 }                          
 .nav-items dd {
+	position: relative;
 	height: 30px;
 	line-height: 30px;
-	padding: 0 12px 0 11px;
+	padding: 0 8px 0 11px;
 	font-size: 12px;
 	letter-spacing: 0;
 }
 .nav-items .hover{
 	background-color: #f94a14;
-
 }
 .nav-items .hover .nav-items-icon{
 	opacity: 1;
@@ -479,12 +497,15 @@ a:hover{
 	vertical-align: -6%;
 	transition: 0.3s opacity;
 }
+.left-icon{
+	position: absolute;
+	right: 14px;/*ie6,7下右浮动换行bug*/
+	font-family: 'self-font';
+	font-weight: bold;
+}
 .nav-items a{
 	color: #fff;
 	font-weight: bold;
-}
-.nav-items span{
-	float: right;
 }
 .nav-items a:hover{
 	text-decoration: underline;
@@ -1075,7 +1096,7 @@ a:hover{
 	padding-top: 18px;
 }
 .boxes{
-	width: 890px;
+	width: 892px;
 }
 .boxes-hd{
 	height: 27px;
@@ -1087,17 +1108,19 @@ a:hover{
 }
 .boxes-wrap{
 	margin-bottom: 10px;
+	padding-left: 1px;
 }
 .boxes-wrap>div{
 	float: left;
 	width: 221px;
 	height: 258px;
-	background: #fff;
+	background-color: #fff;
 	border-right: 2px solid #eaeaea;
 }
 .boxes-wrap>div:hover{
 	position: relative;
 	box-shadow: 0px 0px 0px 1px #ff4400;
+	border-color: transparent;
 }
 .boxes-wrap h3{
 	height: 38px;
@@ -1185,7 +1208,7 @@ a:hover{
 	background-position-y: -688px;
 }
 .boxes-2 h3{
-	border-bottom: 2px solid #eaeaea;
+	border-bottom: 1px solid #eaeaea;
 }
 .boxes-2 div img{
 	display:block;
@@ -1420,11 +1443,15 @@ a:hover{
 }
 
 
+.service{
+	position: relative;
+}
 .service-list{
 	overflow: hidden;
 	border-bottom: 1px solid transparent;
 }
 .service-list li{
+	position: relative;
 	float: left;
 	width: 70px;
 	text-align: center;
@@ -1432,7 +1459,6 @@ a:hover{
 	border: 1px solid transparent;
 	border-right-color: #eaeaea;
 	border-bottom-color: #eaeaea;
-	
 }
 .service-list .between{
 	width: 71px;
@@ -1442,7 +1468,7 @@ a:hover{
 	height: 67px;
 	color: #666;
 }
-.service-list a:hover{
+.service a:hover{
 	color: #ff4400;
 }
 .service-list .last{
@@ -1493,9 +1519,430 @@ a:hover{
 .service-item12 .serv-icon{
 	background-position-y: bottom;
 }
+.service .hover{
+	z-index: 100;
+	border: 1px solid #ff4400;
+	border-bottom-color: #fff;
+}
+
+/*************************************/
+.service-con{
+	position: absolute;
+	left: 0;
+	top: 68px;
+	z-index: 99;
+	width: 288px;
+	height: 150px;
+	border: 1px solid #ff4400;
+	background-color: #fff;
+	overflow: hidden;
+}
+.service-con .close{
+	position: absolute;
+	right: 1px;
+	top: 2px;
+	width: 18px;
+	height: 17px;
+	line-height: 17px;
+	font-family: 'icon';
+	font-size: 18px;
+	color: #9c9999;
+}
+.service-con .close:hover{
+	color: #9c9999;
+	background-color: #eee;
+}
+.service-con .service-tab li{
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+.recharge .service-tab{
+	padding: 9px 0 0 15px;
+}
+.recharge .service-tab li{
+	padding: 0 12px 0 10px;
+}
+.service-tab a{
+	color: #666;
+}
+.service-tab-con{
+	position: absolute;
+	left:0px;
+	top: 34px;
+	width: 2000px;
+	padding-left: 15px;
+}
+.service-con-mod{
+	float: left;
+	width: 288px;
+}
+.service-cost{
+	width: 188px;
+	border: 1px solid #ccc;
+}
+.number-wrap{
+	position: relative;
+	border-bottom: 1px solid #ccc;
+}
+.service-cost .city{
+	position: relative;
+}
+.service-cost .city input{
+	border: none;
+}
+.service-cost .number{
+	height: 24px;
+	line-height: 24px;
+	padding-left: 4px;
+	border: none;
+}
+.service-cost .help-info{
+	position: absolute;
+	right: -19px;
+	top: 5px;
+	width: 13px;
+	height: 13px;
+	background: url(../img/TB1GPH5JVXXXXckXFXXXXXXXXXX-8-20.png) no-repeat 0px -32px;
+	cursor: help;
+}
+.number-record{
+	position: absolute;
+	right: 6px;
+	top: 6px;
+	width: 15px;
+	height: 15px;
+	background: url(../img/service_bg.gif) no-repeat;
+}
+.service-cost .denomin{
+	position: relative;
+	height: 20px;
+	padding: 4px 0 0 5px;
+	color: #000;
+}
+.service-cost .down-icon{
+	float: right;
+	width: 17px;
+	height: 20px;
+	background: url(../img/service_bg.gif) no-repeat 0px -20px ;
+}
+.service-cost .arrow{
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	width: 8px;
+	height: 5px;
+	margin-top: -2px;
+	background: url(../img/TB1GPH5JVXXXXckXFXXXXXXXXXX-8-20.png) no-repeat 0 -15px;	
+}
+.service-tab-con .arrow-icon{
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 20px;
+	height: 10px;
+	padding-top: 10px;
+	line-height: 5px;
+	font-family: 'self-font';
+	color: #ccc;
+	font-size: 12px;
+	overflow: hidden;
+}
+.service-tab-con .price{
+	height: 29px;
+	line-height: 29px;
+	text-indent: 4px;
+	color: #666;
+}
+.service-tab-con .yuan{
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 16px;
+	text-align: center;
+	color: #999;
+	font-size: 10px;
+	font-family: arial;
+}
+.service-tab-con .price span{
+	font-size: 13px;
+	font-weight: bolder;
+	color: #ff6600;
+}
+.service-con-mod-ft{
+	width: 200px;
+	padding-top: 5px;
+	overflow: hidden;
+	*zoom: 1;
+}
+.service-con-mod-ft .price{
+	float: right;
+}
+.service-tab-con .btn{
+	float: left;
+	height: 27px;
+	padding: 0 10px;
+	border-radius: 2px;
+	background-color: #ff4400;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	line-height: 27px;
+}
+.service-tab-con .btn:hover{
+	background-color: #f22d00;
+	color: #fff;
+}
+.service-tab-con .message{
+	float: left;
+	line-height: 27px;
+	margin-left: 14px;
+	color: #666;
+}
+
+.traffic-box{
+	overflow: hidden;
+	*zoom: 1;
+}
+.traffic-box .traffic-type{
+	float: left;
+	width: 88px;
+	padding: 4px 0 0 5px;
+	border-right: 1px solid #ccc;
+}
+.traffic-box .traffic{
+	float: left;
+	width: 88px;
+	padding: 3px 0 0 5px;
+	font-size: 10px;
+	color: #271700;
+}
+#telephone .service-cost, #broadband .service-cost{
+	width: 198px;
+}
+#telephone .number, #broadband .number,  .service-cost .city input{
+	width: 188px;
+	height: 25px;
+	line-height: 25px;
+	padding-left: 10px;
+}
+#telephone .denomin, #broadband .denomin{
+	height: 25px;
+	line-height: 25px;
+	padding: 0;
+	padding-left: 10px;
+}
+#telephone .operator, #broadband .operator{
+	height: 21px;
+	padding: 4px 0 0 2px;
+}
+#telephone .operator label{
+	margin-right: 22px;
+}
+
+/*********************************************************/
+#game .service-tab{
+	padding: 10px 0 0 15px;
+}
+#game .service-tab li{
+	padding: 0 15px 0 7px;
+}
+#game .service-cost{
+	width: 215px;
+}
+#game .game-name{
+	border-bottom: 1px solid #ccc;
+}
+#game .title{
+	float: left;
+	width: 30px;
+	height: 24px;
+	border-right: 1px solid #dcdcdc;
+	line-height: 24px;
+	text-align: center;
+	vertical-align: top;
+	color: #666;
+	background-color: #e5e5e5;
+}
+#game .game-name input{
+	height: 24px;
+	line-height: 24px;
+	border: none;
+	padding-left: 10px;
+}
+#game .denomin{
+	height: 24px;
+	padding: 0;
+	line-height: 24px;
+}
+#game .denomin .figure{
+	padding-left: 10px;
+}
+#game .price{
+	float: left;
+	height: 28px;
+	text-indent: 0px;
+	letter-spacing: 1px;
+}
+#game .paid-select{
+	width: 217px;
+	height: 28px;
+	line-height: 28px;
+}
+#game .paid-select .paid-select-box{
+	float: right;
+}
+#game .paid-select input{
+	margin-right: 5px;
+}
+#game .paid-select .auto {
+	padding-right: 8px;
+}
+#game .service-con-mod-ft{
+	padding-top: 0;
+}
+#game .service-con-mod-ft .message{
+	margin-left: 10px;
+}
+#QQ .service-cost{
+	width: 256px;
+	overflow: hidden;
+	*zoom: 1;
+}
+#QQ .QQ-bussiness, #QQ .amount{
+	float: left;
+	height: 24px;
+	line-height: 24px;
+}
+#QQ .QQ-bussiness{
+	width: 124px;
+	padding-left: 4px;
+	border-right: 1px solid #ccc;
+}
+#QQ .amount{
+	width: 122px;
+	padding-left: 5px;
+}
+#QQ .service-con-mod-ft{
+	width: 100%;
+}
+/*************************************/
+#tourism .service-tab{
+	padding-left: 16px;
+	height: 34px;
+	line-height: 34px;
+}
+#tourism .service-tab li{
+	padding-right: 2px;
+}
+#tourism .tickets-type{
+	color: #333;
+}
+#tourism .tickets-type label{
+	margin-right: 20px;
+}
+.control-group-wrap{
+	padding-bottom: 8px;
+}
+.control-group{
+	overflow: hidden;
+	*zoom: 1;
+}
+.control-group .control-item{
+	position: relative;
+	float: left;
+	width: 118px;
+	border: 1px solid #ccc;
+	margin-right: 20px;
+}
+.control-item label{
+	float: left;
+	width: 30px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+	color: #6b6b6b;
+	background-color: #f5f5f5;
+}
+.control-item input{
+	float: left;       
+	width: 68px;
+	height: 24px;
+	line-height: 24px;
+	padding-left: 2px;
+	border: none;
+	border-width: 0;
+}
+.control-item .to{
+	position: absolute;
+	right: -16px;
+	top: 14px;
+	width: 10px;
+	height: 12px;
+	background: url(../img/tourism_bg.gif) no-repeat 0px -30px;
+}
+.control-item .position{
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 14px;
+	height: 18px;
+	background: url(../img/tourism_bg.gif) no-repeat 0px 3px;
+}
+.control-item .date{
+	position: absolute;
+	right: 5px;
+	top: 0px;
+	width: 16px;
+	height: 18px;
+	background: url(../img/tourism_bg.gif) no-repeat 0px -64px;
+}
+#tourism .tips{
+	position: absolute;
+	left: 154px;
+	top: 0px;
+	color: #bbb;
+}
+#tourism .service-con-mod-ft {
+	width: 100%;
+	padding: 0px;
+}
+
+
+/****************************************/
+#insurance .service-tab{
+	height: 34px;
+	line-height: 34px;
+	padding-left: 15px;
+}
+#insurance .service-tab li{
+	padding: 0 8px;
+}
+#insurance .control-group-wrap{
+	padding-bottom: 18px;
+}
+#insurance .control-item{
+	width: 257px;
+}
+#insurance .control-item label{
+	width: 64px;
+}
+#insurance .continue-btn{
+	float: left;
+	height: 27px;
+	padding: 0 10px;
+	margin-left: 14px;
+	border: 1px solid #dcdcdc;
+	color: #3e3e3e;
+	text-align: center;
+	line-height: 27px;
+}
 
 
 
+
+/*****************************************************/
 .app-icons{
 	padding-left: 14px;
 	background-color: #fff;
